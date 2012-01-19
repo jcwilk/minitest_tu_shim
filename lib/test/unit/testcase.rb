@@ -8,7 +8,7 @@ module Test::Unit # was ::Mini::Test, but rails' horrid code forced my hand
     remove_const :TestCase
   end
 
-  AssertionFailedError = ::MiniTest::Assertion
+  silence_warnings { AssertionFailedError = ::MiniTest::Assertion }
 
   class TestCase < ::MiniTest::Unit::TestCase
 
