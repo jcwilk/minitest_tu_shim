@@ -7,6 +7,8 @@ Gem::Specification.new do |s|
   s.homepage         = 'https://github.com/lumoslabs/minitest_tu_shim'
   s.bindir           = 'bin'
   s.require_paths    = ['lib']
+  s.authors          = ['Ryan Davis']
+  s.email            = ['ryand-ruby@zenspider.com']
   
   s.add_runtime_dependency 'minitest', ['>= 1.6.0']
 end
