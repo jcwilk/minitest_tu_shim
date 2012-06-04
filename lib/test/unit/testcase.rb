@@ -8,11 +8,13 @@ module Test::Unit # was ::Mini::Test, but rails' horrid code forced my hand
     remove_const :TestCase
   end
 
-  if respond_to? :silence_warnings
-    silence_warnings { AssertionFailedError = ::MiniTest::Assertion }
-  else
-    AssertionFailedError = ::MiniTest::Assertion
-  end
+  ## This is causing a conflict with rspec-rails when we introduce prototype-rails
+  ## It seems to be the case that this is no longer required, as our tests (so far) seem to be running fine.
+  # if respond_to? :silence_warnings
+  #   silence_warnings { AssertionFailedError = ::MiniTest::Assertion }
+  # else
+  #   AssertionFailedError = ::MiniTest::Assertion
+  # end
 
   class TestCase < ::MiniTest::Unit::TestCase
 
